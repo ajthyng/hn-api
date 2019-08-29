@@ -10,10 +10,12 @@ export const resolvers = {
     hackerNews: hackerNewsResolvers.query.topStories
   },
   HNStory: {
-    replies: hackerNewsResolvers.query.replies
+    replies: hackerNewsResolvers.query.replies,
+    time: hackerNewsResolvers.query.time
   },
   HNReply: {
     user: hackerNewsResolvers.query.user,
-    replies: hackerNewsResolvers.query.replies
+    replies: hackerNewsResolvers.query.replies,
+    time: hackerNewsResolvers.query.time
   }
 }

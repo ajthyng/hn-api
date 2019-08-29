@@ -38,14 +38,19 @@ export const hackerNewsResolvers: ResolverStructure = {
   query: {
     topStories: async (parent, args, context, info): Promise<TopStory[]> => {
       const storyIds = await axios.get<number[]>('https://hacker-news.firebaseio.com/v0/beststories.json')
+
       const stories = await Promise.all(storyIds.data.map(id => getItem<TopStory>(id)))
+      
       return stories.filter(story => story !== null)
     },
     replies: async (parent, args, context, info): Promise<Reply[]> => {
       if (!parent.kids) return []
+      
       const replies: Reply[] = await Promise.all(parent.kids.map((id: number) => getItem<Reply>(id)))
+      
       return replies.filter(reply => reply !== null)
     },
-    user: (parent) => parent.by
+    user: (parent) => parent.by,
+    time: (parent) => parent.time * 1000
   }
 }
