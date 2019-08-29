@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "src"
+  ],
+  "ext": "js,json,ts",
+  "ignore": [
+    "src/**/*.test.js"
+  ],
+  "delay": "80ms",
+  "exec": "yarn compile:dev && yarn start:dev"
+}

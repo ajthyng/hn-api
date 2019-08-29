@@ -1,0 +1,31 @@
+{
+  "name": "transfer-courses",
+  "version": "1.0.0",
+  "description": "Transfer Courses Evaluation",
+  "main": "dist/index.js",
+  "author": "Andrew Thyng",
+  "license": "MIT",
+  "scripts": {
+    "compile:dev": "tsc -p ./src",
+    "start:dev": "node --inspect=0.0.0.0:9229 dist/index.js",
+    "dev": "nodemon"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/morgan": "^1.7.37",
+    "nodemon": "^1.19.1",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.1",
+    "apollo-server-express": "^2.9.1",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "dayjs": "^1.8.16",
+    "express": "^4.17.1",
+    "graphql": "^14.5.3",
+    "graphql-tools": "^4.0.5",
+    "http": "^0.0.0",
+    "morgan": "^1.9.1"
+  }
+}
